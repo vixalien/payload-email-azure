@@ -1,24 +1,56 @@
 {
-  "name": "@org/payload-email-azure",
-  "version": "1.0.0",
-  "description": "",
-  "main": "src/index.ts",
+  "name": "payload-email-azure",
+  "version": "0.1.0",
+  "description": "Payload Azure Email Adapter",
+  "homepage": "https://github.com/vixalien/payload-email-azure",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
   "scripts": {
-    "clean": "rm -rf node_modules .turbo",
-    "lint": "eslint --ext .ts src"
+    "lint": "eslint --ext .ts src",
+    "build": "pnpm build:types && pnpm build:swc",
+    "build:swc": "swc ./src -d ./dist --config-file .swcrc-build --strip-leading-paths",
+    "build:types": "tsc --emitDeclarationOnly --outDir dist",
+    "clean": "rm -rf {dist,*.tsbuildinfo}",
+    "prepublishOnly": "pnpm clean && pnpm run build"
   },
-  "keywords": [],
+  "exports": {
+    ".": {
+      "import": "./src/index.ts",
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "keywords": ["payload", "azure", "email"],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@azure/core-auth": "^1.7.2",
+    "@swc/cli": "^0.3.14",
+    "@swc/core": "^1.6.5",
     "@types/nodemailer": "^6.4.15",
-    "payload": "3.0.0-beta.53"
+    "payload": "3.0.0-beta.53",
+    "typescript": "^5.5.2"
   },
   "peerDependencies": {
     "payload": "3.0.0-beta.53"
   },
   "dependencies": {
     "@azure/communication-email": "^1.0.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "import": "./dist/index.js",
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    },
+    "main": "./dist/index.js",
+    "registry": "https://registry.npmjs.org/",
+    "types": "./dist/index.d.ts"
   }
 }

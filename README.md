@@ -6,7 +6,7 @@ This adapter allows you to send emails using
 ## Installation
 
 ```sh
-pnpm add @rwarri/payload-email-azure
+pnpm add payload-email-azure
 ```
 
 ## Prerequesites
@@ -16,7 +16,7 @@ pnpm add @rwarri/payload-email-azure
 3. [An active Azure Communication Services resource connected to an Email Domain and its connection string. Get started by connecting an Email Communication Resource with a Azure Communication Resource](https://learn.microsoft.com/en-us/azure/communication-services/quickstarts/create-communication-resource)
 
 ```ts
-import { azureEmailAdapter } from "@org/payload-email-azure";
+import { azureEmailAdapter } from "payload-email-azure";
 
 export default buildConfig({
   email: azureEmailAdapter({
@@ -37,7 +37,7 @@ with Azure.
 ### Using Connection String
 
 ```ts
-import { azureEmailAdapter } from "@org/payload-email-azure";
+import { azureEmailAdapter } from "payload-email-azure";
 
 export default buildConfig({
   email: azureEmailAdapter({
@@ -53,7 +53,7 @@ You may also choose to authenticate with Microsoft Entra ID using the
 `@azure/identity` package.
 
 ```ts
-import { azureEmailAdapter } from "@org/payload-email-azure";
+import { azureEmailAdapter } from "payload-email-azure";
 import { DefaultAzureCredential } from "@azure/identity";
 
 export default buildConfig({
@@ -74,7 +74,7 @@ AzureKeyCredential. Both the `key` and the `endpoint` can be founded on the
 "Keys" pane under "Settings" in your Communication Services Resource.
 
 ```ts
-import { azureEmailAdapter } from "@org/payload-email-azure";
+import { azureEmailAdapter } from "payload-email-azure";
 import { AzureKeyCredential } from "@azure/core-auth";
 
 export default buildConfig({
