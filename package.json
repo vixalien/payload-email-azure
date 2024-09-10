@@ -21,19 +21,23 @@
       "default": "./src/index.ts"
     }
   },
-  "keywords": ["payload", "azure", "email"],
+  "keywords": [
+    "payload",
+    "azure",
+    "email"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@azure/core-auth": "^1.7.2",
-    "@swc/cli": "^0.3.14",
-    "@swc/core": "^1.6.5",
+    "@swc/cli": "^0.4.0",
+    "@swc/core": "^1.7.24",
     "@types/nodemailer": "^6.4.15",
-    "payload": "3.0.0-beta.53",
-    "typescript": "^5.5.2"
+    "payload": "3.0.0-beta.102",
+    "typescript": "^5.6.2"
   },
   "peerDependencies": {
-    "payload": "3.0.0-beta.53"
+    "payload": "3.0.0-beta.102"
   },
   "dependencies": {
     "@azure/communication-email": "^1.0.0"
