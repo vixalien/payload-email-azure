@@ -1,6 +1,6 @@
 {
   "name": "payload-email-azure",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Payload Azure Email Adapter",
   "homepage": "https://github.com/vixalien/payload-email-azure",
   "type": "module",
